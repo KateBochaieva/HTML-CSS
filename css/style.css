@@ -1,0 +1,351 @@
+/* css/style.css */
+
+/* Базові стилі */
+:root {
+    --primary-color: #0056b3; /* Темно-синій */
+    --secondary-color: #007bff; /* Яскраво-синій */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #e9ecef;
+    --border-color: #dee2e6;
+    --header-bg: #343a40; /* Темний для шапки */
+    --header-text: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Для адаптивності на малих екранах */
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    color: var(--secondary-color);
+}
+
+/* Секції */
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--dark-bg);
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+/* Hero секція */
+.hero {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.hero h2 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.hero h2::after {
+    background-color: #fff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1.5rem auto 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--light-bg);
+    color: var(--secondary-color);
+}
+
+/* Модулі */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.module-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.module-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.module-card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.module-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-card ul li {
+    margin-bottom: 8px;
+}
+
+.module-card ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.module-card ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Проекти учнів */
+.projects-section {
+    background-color: var(--light-bg);
+}
+
+.project-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-card h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* Футер */
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 2.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-block {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+}
+
+.footer-block h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-block ul li {
+    margin-bottom: 8px;
+}
+
+.footer-block a {
+    color: var(--header-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-block a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-block img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .module-grid,
+    .project-examples {
+        grid-template-columns: 1fr; /* Один стовпець на мобільних */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-block {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 0 8px;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
