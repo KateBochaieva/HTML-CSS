@@ -6,8 +6,7 @@
     <title>HTML/CSS: Поглиблений рівень - Навчальний модуль</title>
     <meta name="description" content="Навчальний модуль з HTML та CSS для початківців та поглибленого вивчення. Створення структурованих та стилізованих веб-сторінок.">
     <meta name="keywords" content="HTML, CSS, веб-розробка, веб-дизайн, навчання, уроки, поглиблений рівень, Flexbox, Grid, адаптивний дизайн">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/quiz_styles.css"> <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -19,8 +18,7 @@
                     <li><a href="theory/main-content.md">Теорія</a></li>
                     <li><a href="theory/examples.md">Практика</a></li>
                     <li><a href="theory/glossary.md">Глосарій</a></li>
-                    <li><a href="tests/self-check.md">Тести</a></li>
-                    <li><a href="resources/links.md">Ресурси</a></li>
+                    <li><a href="#quizzes">Тести</a></li> <li><a href="resources/links.md">Ресурси</a></li>
                 </ul>
             </nav>
         </div>
@@ -107,6 +105,23 @@
             </div>
         </section>
 
+        <section id="quizzes" class="quizzes-section">
+            <div class="container">
+                <h2>Перевір свої знання!</h2>
+                <p>Пройди короткий тест, щоб закріпити матеріал з вивчених уроків.</p>
+                <div id="quiz-container" class="quiz-container">
+                    <h3>Тест з основ HTML/CSS</h3>
+                    <div id="question-display"></div>
+                    <div id="options-display" class="quiz-options"></div>
+                    <button id="submit-quiz-button" class="quiz-button">Відповісти</button>
+                    <div id="quiz-feedback"></div>
+                    <div id="quiz-results"></div>
+                    <button id="next-question-button" class="quiz-button" style="display: none;">Наступне питання</button>
+                    <button id="restart-quiz-button" class="quiz-button" style="display: none;">Почати заново</button>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects-section">
             <div class="container">
                 <h2>Приклади проектів учнів</h2>
@@ -124,7 +139,7 @@
                         <p>Сторінка портфоліо з використанням Flexbox та Grid.</p>
                         <a href="#" class="btn-small">Переглянути</a>
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -158,6 +173,5 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script> <script src="js/quiz.js"></script> </body>
 </html>
