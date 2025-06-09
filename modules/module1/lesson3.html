@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 3: HTML – Таблиці та форми для взаємодії</title>
+    <meta name="description" content="Третій урок модуля HTML/CSS. Дізнайтеся про створення HTML-таблиць, об'єднання клітинок, а також про проектування інтерактивних форм для збору даних від користувачів.">
+    <meta name="keywords" content="HTML, таблиці, table, tr, th, td, colspan, rowspan, форми, form, input, textarea, select, button, label">
+    <link rel="stylesheet" href="css/lesson_styles.css"> <style>
+        /* Стилі, специфічні для цього уроку */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2980b9;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        b, strong {
+            color: #e74c3c;
+        }
+
+        .note {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .task {
+            background-color: #f7f9fc;
+            border: 1px dashed #c0d3eb;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .task h3 {
+            color: #2980b9;
+            border-bottom: 1px solid #a3c2e0;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #c0392b;
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* Стилі для таблиць */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Склеює межі таблиць */
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        table thead tr {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid #3498db;
+        }
+
+        /* Стилі для форм */
+        form {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="number"],
+        form textarea,
+        form select {
+            width: calc(100% - 22px); /* 100% - padding */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Важливо для розрахунку ширини */
+            font-size: 1em;
+            color: #333;
+        }
+
+        form input[type="checkbox"],
+        form input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        form button,
+        form input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover,
+        form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        form textarea {
+            resize: vertical; /* Дозволити вертикальне змінення розміру */
+            min-height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 3: HTML – Таблиці та форми для взаємодії</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Таблиці (Tables)</h2>
+            <p>HTML-таблиці використовуються для відображення табличних даних (даних, які мають рядки та стовпці). Не використовуйте таблиці для верстки макетів – для цього є CSS Flexbox та Grid!</p>
+
+            <h3>Основні теги таблиць</h3>
+            <ul>
+                <li><strong><code>&lt;table&gt;</code>:</strong> Контейнер для всієї таблиці.</li>
+                <li><strong><code>&lt;tr&gt;</code> (Table Row):</strong> Визначає рядок у таблиці.</li>
+                <li><strong><code>&lt;th&gt;</code> (Table Header):</strong> Визначає клітинку заголовка (зазвичай відображається жирним і по центру).</li>
+                <li><strong><code>&lt;td&gt;</code> (Table Data):</strong> Визначає стандартну клітинку даних.</li>
+            </ul>
+
+            <p>Приклад простої таблиці:</p>
+            <pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Назва товару&lt;/th&gt;
+        &lt;th&gt;Кількість&lt;/th&gt;
+        &lt;th&gt;Ціна&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ноутбук&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;12000 грн&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Миша&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;350 грн&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+            <h3>Семантичні теги таблиць (для структуризації)</h3>
+            <p>Для кращої семантики та доступності великих таблиць використовують:</p>
+            <ul>
+                <li><strong><code>&lt;thead&gt;</code>:</strong> Групує вміст заголовка таблиці.</li>
+                <li><strong><code>&lt;tbody&gt;</code>:</strong> Групує основний вміст (тіло) таблиці.</li>
+                <li><strong><code>&lt;tfoot&gt;</code>:</strong> Групує вміст нижнього колонтитула (футера) таблиці.</li>
+            </ul>
+            <p>Приклад з семантичними тегами:</p>
+            <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;День тижня&lt;/th&gt;
+            &lt;th&gt;Ранкові заняття&lt;/th&gt;
+            &lt;th&gt;Вечірні заняття&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Понеділок&lt;/td&gt;
+            &lt;td&gt;Математика&lt;/td&gt;
+            &lt;td&gt;Програмування&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Вівторок&lt;/td&gt;
+            &lt;td&gt;Фізика&lt;/td&gt;
+            &lt;td&gt;Спорт&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Розклад може змінюватися&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+            <h3>Об'єднання клітинок: <code>colspan</code> та <code>rowspan</code></h3>
+            <ul>
+                <li><strong><code>colspan</code>:</strong> Об'єднує клітинку за <strong>стовпцями</strong> (горизонтально). Значення – кількість стовпців, які клітинка повинна займати.</li>
+                <li><strong><code>rowspan</code>:</strong> Об'єднує клітинку за <strong>рядками</strong> (вертикально). Значення – кількість рядків, які клітинка повинна займати.</li>
+            </ul>
+            <p>Приклад об'єднання клітинок:</p>
+            <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt;Категорія&lt;/th&gt;
+            &lt;th colspan="2"&gt;Товар&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Назва&lt;/th&gt;
+            &lt;th&gt;Кількість&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Електроніка&lt;/td&gt;
+            &lt;td&gt;Смартфон&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt; &lt;!-- Порожня клітинка, бо "Електроніка" займає 2 рядки --&gt;
+            &lt;td&gt;Планшет&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;Одяг&lt;/td&gt;
+            &lt;td&gt;Футболка&lt;/td&gt;
+            &lt;td&gt;100&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;Джинси&lt;/td&gt;
+            &lt;td&gt;75&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <div class="note">
+                <p><strong>Порада:</strong> Важливо правильно розраховувати кількість клітинок при використанні <code>colspan</code> та <code>rowspan</code>, щоб структура таблиці була коректною.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Форми (Forms)</h2>
+            <p>HTML-форми використовуються для збору даних від користувачів (наприклад, введення тексту, вибір опцій, завантаження файлів) та надсилання їх на сервер.</p>
+
+            <h3>Тег <code>&lt;form&gt;</code> та його атрибути</h3>
+            <ul>
+                <li><strong><code>&lt;form&gt;</code>:</strong> Контейнер для всіх елементів форми.</li>
+                <li><strong><code>action</code>:</strong> URL-адреса, на яку відправлятимуться дані форми після її надсилання.</li>
+                <li><strong><code>method</code>:</strong> HTTP-метод для відправки даних.
+                    <ul>
+                        <li><strong><code>GET</code>:</strong> Дані форми додаються до URL як параметри запиту. Підходить для нечутливих даних (пошукові запити).</li>
+                        <li><strong><code>POST</code>:</strong> Дані форми відправляються у тілі HTTP-запиту. Підходить для конфіденційних даних (паролі, особиста інформація), а також для великих обсягів даних.</li>
+                    </ul>
+                </li>
+            </ul>
+            <pre><code class="language-html">&lt;form action="/submit_form.php" method="POST"&gt;
+    &lt;!-- Елементи форми тут --&gt;
+&lt;/form&gt;</code></pre>
+
+            <h3>Елементи вводу (Input Elements)</h3>
+            <p>Найпоширеніший елемент форми – <code>&lt;input&gt;</code>. Його тип визначається атрибутом <code>type</code>.</p>
+            <ul>
+                <li><strong><code>type="text"</code>:</strong> Однорядкове текстове поле.</li>
+                <li><strong><code>type="password"</code>:</strong> Поле для пароля (символи приховані).</li>
+                <li><strong><code>type="email"</code>:</strong> Поле для електронної пошти (з базовою валідацією формату).</li>
+                <li><strong><code>type="number"</code>:</strong> Поле для введення чисел.</li>
+                <li><strong><code>type="checkbox"</code>:</strong> Прапорець (для множинного вибору).</li>
+                <li><strong><code>type="radio"</code>:</strong> Перемикач (для вибору однієї опції з кількох, повинні мати однаковий <code>name</code>).</li>
+                <li><strong><code>type="submit"</code>:</strong> Кнопка для відправки форми.</li>
+                <li><strong><code>type="button"</code>:</strong> Звичайна кнопка (потребує JavaScript для функціональності).</li>
+                <li><strong><code>type="date"</code>, <code>type="color"</code>, <code>type="range"</code>, <code>type="file"</code>:</strong> Сучасніші типи для різних цілей.</li>
+            </ul>
+
+            <p>Важливі атрибути для <code>&lt;input&gt;</code>:</p>
+            <ul>
+                <li><strong><code>name</code>:</strong> Ім'я поля, яке буде використовуватися для ідентифікації даних при відправці на сервер. **Обов'язковий!**</li>
+                <li><strong><code>value</code>:</strong> Початкове значення поля або значення, яке буде відправлено (для радіокнопок, прапорців).</li>
+                <li><strong><code>placeholder</code>:</strong> Короткий текст-підказка, що відображається у полі, поки користувач не введе дані.</li>
+                <li><strong><code>required</code>:</strong> Булевий атрибут; поле є обов'язковим для заповнення.</li>
+                <li><strong><code>readonly</code>:</strong> Булевий атрибут; поле не може бути змінено користувачем.</li>
+                <li><strong><code>disabled</code>:</strong> Булевий атрибут; поле неактивне та не відправляється з формою.</li>
+            </ul>
+
+            <p>Приклад різних полів <code>&lt;input&gt;</code>:</p>
+            <pre><code class="language-html">&lt;form&gt;
+    &lt;div&gt;
+        &lt;label for="username"&gt;Ім'я користувача:&lt;/label&gt;
+        &lt;input type="text" id="username" name="username" placeholder="Введіть ваше ім'я" required&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="useremail"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="useremail" name="useremail" placeholder="example@domain.com"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="userpass"&gt;Пароль:&lt;/label&gt;
+        &lt;input type="password" id="userpass" name="userpass" minlength="8"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="checkbox" id="newsletter" name="newsletter" value="yes"&gt;
+        &lt;label for="newsletter"&gt;Підписатися на розсилку&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;p&gt;Ваша стать:&lt;/p&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;Чоловіча&lt;/label&gt;&lt;br&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;Жіноча&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" value="Відправити форму"&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+            <h3>Тег <code>&lt;label&gt;</code></h3>
+            <p>Тег <code>&lt;label&gt;</code> асоціює текстову мітку з елементом керування формою. Це покращує доступність, дозволяючи користувачам клікати на мітку, щоб активувати відповідний елемент вводу.</p>
+            <p>Використовуйте атрибут <code>for</code> у <code>&lt;label&gt;</code>, значення якого повинно співпадати з атрибутом <code>id</code> відповідного поля вводу.</p>
+            <pre><code class="language-html">&lt;label for="myInput"&gt;Моє поле вводу:&lt;/label&gt;
+&lt;input type="text" id="myInput" name="myInput"&gt;</code></pre>
+
+            <h3>Багаторядкове текстове поле (<code>&lt;textarea&gt;</code>)</h3>
+            <p>Для введення великого обсягу тексту використовується <code>&lt;textarea&gt;</code>.</p>
+            <pre><code class="language-html">&lt;div&gt;
+    &lt;label for="comment"&gt;Ваші коментарі:&lt;/label&gt;
+    &lt;textarea id="comment" name="comment" rows="5" cols="40" placeholder="Введіть ваш коментар..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+            <ul>
+                <li><strong><code>rows</code>:</strong> Визначає видиму кількість рядків.</li>
+                <li><strong><code>cols</code>:</strong> Визначає видиму ширину в символах.</li>
+            </ul>
+
+            <h3>Випадаючий список (<code>&lt;select&gt;</code> та <code>&lt;option&gt;</code>)</h3>
+            <p>Для вибору однієї або кількох опцій зі списку використовується <code>&lt;select&gt;</code> разом з тегами <code>&lt;option&gt;</code>.</p>
+            <pre><code class="language-html">&lt;div&gt;
+    &lt;label for="country"&gt;Виберіть країну:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+        &lt;option value=""&gt;-- Будь ласка, оберіть --&lt;/option&gt;
+        &lt;option value="ua"&gt;Україна&lt;/option&gt;
+        &lt;option value="us"&gt;США&lt;/option&gt;
+        &lt;option value="ca"&gt;Канада&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+            <p>Атрибут <code>value</code> у <code>&lt;option&gt;</code> – це значення, яке буде відправлено на сервер.</p>
+
+            <h3>Кнопки (Buttons)</h3>
+            <p>Тег <code>&lt;button&gt;</code> є більш гнучким, ніж <code>&lt;input type="submit"&gt;</code>, оскільки може містити HTML-контент (зображення, інші теги).</p>
+            <pre><code class="language-html">&lt;button type="submit"&gt;Відправити&lt;/button&gt;
+&lt;button type="reset"&gt;Очистити форму&lt;/button&gt;
+&lt;button type="button"&gt;Звичайна кнопка&lt;/button&gt;</code></pre>
+            <div class="note">
+                <p><strong>Важливо:</strong> Завжди вказуйте атрибут <code>type</code> для <code>&lt;button&gt;</code>, щоб уникнути неочікуваної поведінки (за замовчуванням багато браузерів вважають його <code>submit</code>).</p>
+            </div>
+        </section>
+
+        <section class="task">
+            <h3>Практичне завдання: Розширений розклад та форма зворотного зв'язку</h3>
+            <p>Створіть новий HTML-файл <code>advanced_features.html</code> і реалізуйте наступне:</p>
+            <ol>
+                <li>Налаштуйте базову структуру HTML5.</li>
+                <li><strong>Створіть розширену таблицю розкладу:</strong>
+                    <ul>
+                        <li>Додайте таблицю для розкладу на тиждень (5 робочих днів).</li>
+                        <li>Використайте <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>.</li>
+                        <li>Перший стовпець – час (наприклад, 9:00, 10:00, 11:00).</li>
+                        <li>Використайте <code>colspan</code> для об'єднання клітинок, якщо якесь заняття триває кілька годин, або <code>rowspan</code> для об'єднання днів, якщо є спільні елементи. Наприклад, об'єднайте клітинку "Обід" на всіх днях, або "Вихідні" на суботу та неділю.</li>
+                        <li>Додайте мінімум 3-4 заняття на день.</li>
+                    </ul>
+                </li>
+                <li>**Створіть форму зворотного зв'язку:**
+                    <ul>
+                        <li>Форма повинна мати атрибути <code>action="#"</code> та <code>method="POST"</code>.</li>
+                        <li>Поля:
+                            <ul>
+                                <li>Ім'я (<code>text</code>, обов'язкове, з placeholder).</li>
+                                <li>Email (<code>email</code>, обов'язкове, з placeholder).</li>
+                                <li>Телефон (<code>tel</code>, необов'язкове, з placeholder).</li>
+                                <li>Тема повідомлення (випадаючий список <code>&lt;select&gt;</code> з 3-4 опціями, наприклад "Пропозиція", "Питання", "Скарга").</li>
+                                <li>Ваше повідомлення (<code>&lt;textarea&gt;</code>, <code>rows="7"</code>, з placeholder).</li>
+                                <li>Прапорець для згоди з обробкою даних (обов'язковий).</li>
+                            </ul>
+                        </li>
+                        <li>Використайте <code>&lt;label&gt;</code> для кожного елемента форми та пов'яжіть їх за допомогою атрибутів <code>for</code> та <code>id</code>.</li>
+                        <li>Кнопка "Відправити" (використайте <code>&lt;button type="submit"&gt;</code>).</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="note">
+                <p>Збережіть файл, відкрийте у браузері та перевірте функціонал (хоча форма не буде відправлятися, оскільки <code>action="#"</code>).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center; margin-top: 50px; color: #7f8c8d; font-size: 0.9em;">
+            © 2025 Навчальний модуль HTML/CSS. Урок 3.
+        </p>
+    </footer>
+</body>
+</html>
