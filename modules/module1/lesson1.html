@@ -1,117 +1,179 @@
-# Корисні посилання: HTML та CSS (Поглиблений рівень)
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 1: Вступ до веб-розробки. Як працює Інтернет?</title>
+    <meta name="description" content="Перший урок модуля HTML/CSS. Дізнайтеся, як працює Інтернет, що таке веб-сторінки, браузери, сервери, URL та протоколи HTTP/HTTPS.">
+    <meta name="keywords" content="веб-розробка, HTML, CSS, Інтернет, браузер, сервер, URL, HTTP, HTTPS">
+    <link rel="stylesheet" href="css/lesson_styles.css"> <style>
+        /* Стилі, специфічні для цього уроку */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
 
-Цей документ містить підібрані корисні посилання на ресурси, які допоможуть вам у вивченні HTML та CSS. Ресурси згруповані за категоріями, що відповідають модулям курсу.
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
 
----
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2980b9;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
 
-## Загальні ресурси та документація
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
 
-* **MDN Web Docs (Mozilla Developer Network)** – Комплексна та актуальна документація з веб-технологій. Обов'язковий ресурс для кожного веб-розробника.
-    * [HTML: HyperText Markup Language](https://developer.mozilla.org/uk/docs/Web/HTML)
-    * [CSS: Cascading Style Sheets](https://developer.mozilla.org/uk/docs/Web/CSS)
-* **W3Schools** – Популярний ресурс з уроками, прикладами та довідниками з HTML, CSS та інших веб-технологій. Чудово підходить для початківців.
-    * [HTML Tutorial](https://www.w3schools.com/html/)
-    * [CSS Tutorial](https://www.w3schools.com/css/)
-* **caniuse.com** – Перевірка сумісності веб-технологій з різними браузерами. Дуже корисний інструмент для кросбраузерної розробки.
-    * [Can I use...](https://caniuse.com/)
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
 
----
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
 
-## Модуль 1: Вступ до веб-розробки та основи HTML
+        b, strong {
+            color: #e74c3c;
+        }
 
-* **Як працює Інтернет?**
-    * [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=GEoQpL0uV7c) (Відео, англійською)
-    * [Що таке URL?](https://developer.mozilla.org/uk/docs/Glossary/URL) (MDN Web Docs)
-    * [Що таке HTTP?](https://developer.mozilla.org/uk/docs/Web/HTTP) (MDN Web Docs)
-* **Основи HTML:**
-    * [HTML Basic Examples](https://www.w3schools.com/html/html_basic.asp) (W3Schools)
-    * [HTML Elements](https://developer.mozilla.org/uk/docs/Web/HTML/Element) (MDN Web Docs)
-* **Семантичні елементи HTML5:**
-    * [HTML Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp) (W3Schools)
-    * [HTML Sectioning elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Content_categories#sectioning_content) (MDN Web Docs)
+        .note {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
 
----
+        .task {
+            background-color: #f7f9fc;
+            border: 1px dashed #c0d3eb;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .task h3 {
+            color: #2980b9;
+            border-bottom: 1px solid #a3c2e0;
+        }
 
-## Модуль 2: Основи CSS: стилізація веб-сторінок
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Урок 1: Вступ до веб-розробки. Як працює Інтернет?</h1>
+    </header>
 
-* **Вступ до CSS та методи підключення:**
-    * [CSS Syntax](https://www.w3schools.com/css/css_syntax.asp) (W3Schools)
-    * [How To Add CSS](https://www.w3schools.com/css/css_howto.asp) (W3Schools)
-* **CSS-селектори:**
-    * [CSS Selectors](https://www.w3schools.com/css/css_selectors.asp) (W3Schools)
-    * [CSS selectors](https://developer.mozilla.org/uk/docs/Web/CSS/CSS_Selectors) (MDN Web Docs)
-    * [CSS Diner](https://flukeout.github.io/) (Інтерактивна гра для вивчення селекторів)
-* **Кольори та фони:**
-    * [CSS Colors](https://www.w3schools.com/css/css_colors.asp) (W3Schools)
-    * [CSS Backgrounds](https://www.w3schools.com/css/css_background.asp) (W3Schools)
-    * [Coolors.co](https://coolors.co/) (Генератор кольорових палітр)
-* **Шрифти та текст:**
-    * [CSS Fonts](https://www.w3schools.com/css/css_fonts.asp) (W3Schools)
-    * [Google Fonts](https://fonts.google.com/) (Безкоштовні веб-шрифти)
-    * [CSS Text](https://www.w3schools.com/css/css_text.asp) (W3Schools)
-* **Модель блоку (Box Model):**
-    * [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp) (W3Schools)
-    * [The box model](https://developer.mozilla.org/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) (MDN Web Docs)
-* **Дисплейні властивості:**
-    * [CSS Display Property](https://www.w3schools.com/cssref/pr_class_display.asp) (W3Schools)
-    * [display](https://developer.mozilla.org/uk/docs/Web/CSS/display) (MDN Web Docs)
-* **Позиціонування елементів:**
-    * [CSS Layout - The position Property](https://www.w3schools.com/css/css_positioning.asp) (W3Schools)
-    * [position](https://developer.mozilla.org/uk/docs/Web/CSS/position) (MDN Web Docs)
-* **Псевдокласи та псевдоелементи:**
-    * [CSS Pseudo-classes](https://www.w3schools.com/css/css_pseudo_classes.asp) (W3Schools)
-    * [CSS Pseudo-elements](https://www.w3schools.com/css/css_pseudo_elements.asp) (W3Schools)
+    <main>
+        <section>
+            <h2>Що таке веб-сторінка та веб-сайт?</h2>
+            <p><strong>Веб-сторінка</strong> – це електронний документ, написаний за допомогою мов розмітки (наприклад, HTML), який може бути відображений у веб-браузері. Подумайте про неї як про аркуш паперу з текстом, зображеннями та іншими елементами, що можуть містити посилання на інші аркуші.</p>
+            <p><strong>Веб-сайт</strong> – це сукупність взаємопов'язаних веб-сторінок, які зазвичай належать одній організації або особі та розміщені на одному веб-сервері. Веб-сайт може бути як дуже простим (кілька сторінок), так і дуже складним (тисячі сторінок, як Google або Wikipedia).</p>
+        </section>
 
----
+        <section>
+            <h2>Роль браузера (клієнта) та сервера</h2>
+            <p>Щоб зрозуміти, як працює Інтернет, уявіть собі ресторан:</p>
+            <ul>
+                <li><strong>Ви (клієнт/браузер):</strong> Ви сидите за столом у ресторані й хочете замовити їжу. Ваш браузер (наприклад, Google Chrome, Mozilla Firefox, Apple Safari) – це програма на вашому пристрої (комп'ютері, смартфоні), яка запитує веб-сторінки та відображає їх для вас.</li>
+                <li><strong>Офіціант (HTTP):</strong> Це протокол зв'язку, який передає ваше замовлення на кухню і приносить вам готову страву. У вебі HTTP/HTTPS – це правила, за якими ваш браузер і сервер спілкуються.</li>
+                <li><strong>Кухня/Шеф-кухар (сервер):</strong> Це місце, де готується їжа. Веб-сервер – це потужний комп'ютер, який зберігає веб-сторінки, зображення та інші файли веб-сайту. Коли ви запитуєте сторінку, сервер її знаходить і відправляє вашому браузеру.</li>
+            </ul>
+            <p>Отже, ваш <strong>браузер</strong> робить запит до <strong>сервера</strong> через <strong>HTTP/HTTPS</strong>, а сервер відправляє браузеру потрібну веб-сторінку.</p>
+        </section>
 
-## Модуль 3: Поглиблений HTML та CSS: Проектування макетів
+        <section>
+            <h2>Поняття URL (Uniform Resource Locator) та його складові</h2>
+            <p>Кожна веб-сторінка в Інтернеті має свою унікальну адресу, яка називається <strong>URL (Uniform Resource Locator)</strong>. Це як адреса будинку, за якою пошта доставляє листи.</p>
+            <p>Розглянемо приклад: <code>https://www.example.com:8080/path/to/page.html?name=John#section2</code></p>
+            <ul>
+                <li><strong><code>https://</code></strong> – <strong>Протокол:</strong> Це правила спілкування, які використовуються для доступу до ресурсу. Найпоширеніші – HTTP (Hypertext Transfer Protocol) та HTTPS (безпечна версія HTTP).</li>
+                <li><strong><code>www.example.com</code></strong> – <strong>Доменне ім'я:</strong> Легко запам'ятовувана назва для веб-сайту (наприклад, google.com, wikipedia.org). Воно перетворюється на IP-адресу (набір цифр), яка вказує на конкретний сервер.</li>
+                <li><strong><code>:8080</code></strong> – <strong>Порт (необов'язково):</strong> Номер порту на сервері. Для HTTP це зазвичай 80, для HTTPS – 443, і вони часто опускаються.</li>
+                <li><strong><code>/path/to/page.html</code></strong> – <strong>Шлях:</strong> Вказує на конкретний файл або директорію на веб-сервері.</li>
+                <li><strong><code>?name=John</code></strong> – <strong>Параметри запиту (Query Parameters, необов'язково):</strong> Додаткова інформація, що передається на сервер, зазвичай використовується для пошуку або фільтрації даних. Починаються з `?` і розділяються `&`.</li>
+                <li><strong><code>#section2</code></strong> – <strong>Якір (Fragment Identifier, необов'язково):</strong> Вказує на конкретний розділ на самій веб-сторінці. Браузер перемістить вас до цього розділу після завантаження сторінки.</li>
+            </ul>
+        </section>
 
-* **Flexbox:**
-    * [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) (W3Schools)
-    * [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-complete-guide-to-flexbox/) (CSS-Tricks)
-    * [Flexbox Froggy](https://flexboxfroggy.com/) (Інтерактивна гра для вивчення Flexbox)
-* **CSS Grid Layout:**
-    * [CSS Grid Layout](https://www.w3schools.com/css/css_grid.asp) (W3Schools)
-    * [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-css-grid/) (CSS-Tricks)
-    * [Grid Garden](https://cssgridgarden.com/) (Інтерактивна гра для вивчення CSS Grid)
-* **Адаптивний дизайн та медіа-запити:**
-    * [CSS Responsive Web Design](https://www.w3schools.com/css/css_rwd_intro.asp) (W3Schools)
-    * [CSS Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) (W3Schools)
-    * [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) (MDN Web Docs)
-* **SVG та іконки:**
-    * [SVG Images](https://www.w3schools.com/html/html5_svg.asp) (W3Schools)
-    * [Font Awesome](https://fontawesome.com/) (Популярна бібліотека іконок)
-    * [Material Symbols](https://fonts.google.com/icons) (Іконки від Google)
-* **CSS-переходи та трансформації:**
-    * [CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp) (W3Schools)
-    * [CSS 2D Transforms](https://www.w3schools.com/css/css3_2dtransforms.asp) (W3Schools)
-    * [CSS 3D Transforms](https://www.w3schools.com/css/css3_3dtransforms.asp) (W3Schools)
-* **Доступність (Accessibility):**
-    * [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) (Офіційний сайт W3C про доступність)
-    * [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/)
-    * [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)
-* **SEO для HTML:**
-    * [SEO Tutorial](https://www.w3schools.com/html/html_seo.asp) (W3Schools)
-    * [Google Search Central: SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+        <section>
+            <h2>Протокол HTTP/HTTPS</h2>
+            <p>Як згадувалося, <strong>HTTP</strong> та <strong>HTTPS</strong> – це основні протоколи передачі даних у Всесвітній павутині. Вони визначають формат повідомлень, якими обмінюються браузер і сервер.</p>
+            <ul>
+                <li><strong>HTTP (Hypertext Transfer Protocol):</strong> Це базовий протокол. Дані передаються у відкритому, незашифрованому вигляді. Це означає, що теоретично хтось, хто перехопить дані, зможе їх прочитати. Тому HTTP використовується для сайтів, де не передається конфіденційна інформація.</li>
+                <li><strong>HTTPS (Hypertext Transfer Protocol Secure):</strong> Це безпечна версія HTTP. Вона використовує шифрування (зазвичай SSL/TLS) для захисту даних під час передачі. Це критично важливо для сайтів, які обробляють особисті дані, банківські реквізити, паролі. Ви завжди повинні бачити "замочок" у адресному рядку браузера, коли користуєтеся такими сайтами.</li>
+            </ul>
+        </section>
 
----
+        <section>
+            <h2>Як дані передаються через Інтернет (огляд)</h2>
+            <p>Коли ви вводите URL у браузері, відбувається наступний спрощений процес:</p>
+            <ol>
+                <li><strong>Введення URL:</strong> Ви вводите адресу веб-сайту.</li>
+                <li><strong>DNS-запит:</strong> Браузер запитує DNS-сервер (Domain Name System), щоб перетворити доменне ім'я (наприклад, example.com) на IP-адресу сервера, де розміщений сайт. Це як шукати номер телефону за ім'ям у телефонній книзі.</li>
+                <li><strong>Встановлення з'єднання:</strong> Ваш браузер встановлює з'єднання з цим сервером за отриманою IP-адресою, використовуючи протокол HTTP або HTTPS.</li>
+                <li><strong>HTTP-запит:</strong> Браузер відправляє HTTP-запит до сервера, запитуючи потрібну веб-сторінку (наприклад, "дай мені index.html").</li>
+                <li><strong>HTTP-відповідь:</strong> Сервер отримує запит, знаходить файл `index.html` (або генерує його динамічно) і відправляє його назад браузеру у вигляді HTTP-відповіді.</li>
+                <li><strong>Відображення сторінки:</strong> Браузер отримує HTML-код, CSS-стилі, JavaScript-скрипти, зображення та інші файли, а потім інтерпретує їх і відображає веб-сторінку на вашому екрані.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Примітка:</strong> Цей опис є значним спрощенням. Насправді процес набагато складніший і включає маршрутизатори, мережеві комутатори, балансувальники навантаження та багато іншого. Однак, для розуміння основ цього достатньо.</p>
+            </div>
+        </section>
 
-## Модуль 4: Практичне застосування та проектування веб-сайтів
+        <section class="task">
+            <h3>Практичне завдання: Дослідження URL та браузера</h3>
+            <ol>
+                <li>Відкрийте ваш веб-браузер (Chrome, Firefox, Edge, Safari).</li>
+                <li>Введіть наступні URL-адреси в адресний рядок і натисніть Enter. Для кожної URL-адреси проаналізуйте її складові (протокол, домен, шлях, якщо є):
+                    <ul>
+                        <li><code>https://www.google.com</code></li>
+                        <li><code>https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0_%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0</code></li>
+                        <li><code>http://example.com/hello.html</code> (спробуйте ввести HTTP, і подивіться, чи браузер не перенаправить на HTTPS)</li>
+                        <li><code>https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=youtu.be</code> (проаналізуйте query parameters)</li>
+                    </ul>
+                </li>
+                <li>Спробуйте ввести деякі URL-адреси без "www" або "https://" (наприклад, <code>google.com</code> або <code>example.com</code>) і подивіться, що відбувається. Чи браузер автоматично додає "https://"?</li>
+                <li>Відкрийте веб-сайт на ваш вибір і спробуйте клацнути правою кнопкою миші на сторінці, потім виберіть "Переглянути код елемента" (Inspect Element) або "Переглянути джерело сторінки" (View Page Source). Подивіться на HTML-код, який браузер отримав від сервера.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Порада:</strong> Запишіть свої спостереження. Це допоможе вам краще зрозуміти, як працює веб.</p>
+            </div>
+        </section>
+    </main>
 
-* **Проектування макету (Wireframing / Prototyping):**
-    * [Figma](https://www.figma.com/) (Популярний інструмент для UI/UX дизайну та прототипування)
-    * [Wireframing and Prototyping](https://www.interaction-design.org/literature/topics/wireframing-and-prototyping)
-* **Git та GitHub:**
-    * [Git Handbook](https://guides.github.com/introduction/git-handbook/) (GitHub Guides)
-    * [Learn Git Branching](https://learngitbranching.js.org/) (Інтерактивний посібник з Git)
-    * [Git Cheatsheet](https://training.github.com/downloads/github-git-cheat-sheet/)
-* **GitHub Pages:**
-    * [GitHub Pages Documentation](https://docs.github.com/en/pages) (Офіційна документація)
-* **Валідація HTML/CSS:**
-    * [W3C Markup Validation Service](https://validator.w3.org/) (Валідатор HTML)
-    * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) (Валідатор CSS)
-* **Оптимізація зображень:**
-    * [TinyPNG](https://tinypng.com/) (Сервіс для оптимізації PNG та JPEG зображень)
-    * [Squoosh](https://squoosh.app/) (Веб-додаток для оптимізації зображень від Google)
-
----
+    <footer>
+        <p style="text-align: center; margin-top: 50px; color: #7f8c8d; font-size: 0.9em;">
+            &copy; 2025 Навчальний модуль HTML/CSS. Урок 1.
+        </p>
+    </footer>
+</body>
+</html>
