@@ -1,1 +1,152 @@
+/* css/quiz_styles.css */
 
+/* Стилі для контейнера вікторини */
+#quiz-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto; /* Центрує контейнер */
+}
+
+#quiz-container h3 {
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Стилі для питання */
+#question-display {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Стилі для варіантів відповідей */
+.quiz-options label {
+    display: block;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.quiz-options label:hover {
+    background-color: #eef7ff;
+    border-color: #a7d9ff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2); /* Збільшуємо радіокнопки */
+    vertical-align: middle;
+}
+
+/* Стилі для кнопок */
+.quiz-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    box-sizing: border-box; /* Враховуємо padding та border у ширині */
+}
+
+.quiz-button:hover {
+    transform: translateY(-2px);
+}
+
+#submit-quiz-button {
+    background-color: #3498db; /* Синій */
+    color: white;
+    border: none;
+}
+
+#submit-quiz-button:hover {
+    background-color: #2980b9;
+}
+
+#next-question-button {
+    background-color: #1abc9c; /* Бірюзовий */
+    color: white;
+    border: none;
+}
+
+#next-question-button:hover {
+    background-color: #16a085;
+}
+
+#restart-quiz-button {
+    background-color: #e67e22; /* Помаранчевий */
+    color: white;
+    border: none;
+}
+
+#restart-quiz-button:hover {
+    background-color: #d35400;
+}
+
+/* Стилі для зворотного зв'язку та результатів */
+#quiz-feedback {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Враховуємо padding та border */
+}
+
+.correct-answer {
+    color: #27ae60; /* Зелений */
+    background-color: #e8f6f3;
+    border: 1px solid #d4edda;
+}
+
+.wrong-answer {
+    color: #c0392b; /* Червоний */
+    background-color: #fdeaea;
+    border: 1px solid #f8d7da;
+}
+
+#quiz-results {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #d0f0c0; /* Світло-зелений фон для результатів */
+    border-radius: 8px;
+    border: 1px solid #a9d9a0;
+    box-sizing: border-box; /* Враховуємо padding та border */
+}
+
+/* Додаткові стилі для секції тестів у вашій структурі */
+.quizzes-section {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Легкий фон для секції */
+    text-align: center;
+}
+
+.quizzes-section h2 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.quizzes-section p {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
